@@ -1,30 +1,30 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import NavHeader from '../components/NavHeader';
-import Footer from '../components/Footer';
+import React, { useState } from "react";
+import NavHeader from "../components/NavHeader";
+import Footer from "../components/Footer";
 
 export default function Contact() {
-  const [contactMethod, setContactMethod] = useState<'none' | 'line' | 'form'>(
-    'none'
+  const [contactMethod, setContactMethod] = useState<"none" | "line" | "form">(
+    "none"
   );
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    gender: '',
-    age: '',
-    inquiryType: '',
-    relation: '',
-    residence: '',
-    surveyArea: '',
-    preferredDate: '',
-    preferredPlace: '',
-    contactMethodDetail: '',
-    phoneAllowed: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    gender: "",
+    age: "",
+    inquiryType: "",
+    relation: "",
+    residence: "",
+    surveyArea: "",
+    preferredDate: "",
+    preferredPlace: "",
+    contactMethodDetail: "",
+    phoneAllowed: "",
+    subject: "",
+    message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -40,78 +40,78 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        gender: '',
-        age: '',
-        inquiryType: '',
-        relation: '',
-        residence: '',
-        surveyArea: '',
-        preferredDate: '',
-        preferredPlace: '',
-        contactMethodDetail: '',
-        phoneAllowed: '',
-        subject: '',
-        message: '',
+        name: "",
+        email: "",
+        phone: "",
+        gender: "",
+        age: "",
+        inquiryType: "",
+        relation: "",
+        residence: "",
+        surveyArea: "",
+        preferredDate: "",
+        preferredPlace: "",
+        contactMethodDetail: "",
+        phoneAllowed: "",
+        subject: "",
+        message: "",
       });
     }, 3000);
   };
 
   const prefectures = [
-    '北海道',
-    '青森',
-    '岩手',
-    '宮城',
-    '秋田',
-    '山形',
-    '福島',
-    '茨城',
-    '栃木',
-    '群馬',
-    '埼玉',
-    '千葉',
-    '東京',
-    '神奈川',
-    '新潟',
-    '富山',
-    '石川',
-    '福井',
-    '山梨',
-    '長野',
-    '岐阜',
-    '静岡',
-    '愛知',
-    '三重',
-    '滋賀',
-    '京都',
-    '大阪',
-    '兵庫',
-    '奈良',
-    '和歌山',
-    '鳥取',
-    '島根',
-    '岡山',
-    '広島',
-    '山口',
-    '徳島',
-    '香川',
-    '愛媛',
-    '高知',
-    '福岡',
-    '佐賀',
-    '長崎',
-    '熊本',
-    '大分',
-    '宮崎',
-    '鹿児島',
-    '沖縄',
+    "北海道",
+    "青森",
+    "岩手",
+    "宮城",
+    "秋田",
+    "山形",
+    "福島",
+    "茨城",
+    "栃木",
+    "群馬",
+    "埼玉",
+    "千葉",
+    "東京",
+    "神奈川",
+    "新潟",
+    "富山",
+    "石川",
+    "福井",
+    "山梨",
+    "長野",
+    "岐阜",
+    "静岡",
+    "愛知",
+    "三重",
+    "滋賀",
+    "京都",
+    "大阪",
+    "兵庫",
+    "奈良",
+    "和歌山",
+    "鳥取",
+    "島根",
+    "岡山",
+    "広島",
+    "山口",
+    "徳島",
+    "香川",
+    "愛媛",
+    "高知",
+    "福岡",
+    "佐賀",
+    "長崎",
+    "熊本",
+    "大分",
+    "宮崎",
+    "鹿児島",
+    "沖縄",
   ];
 
   return (
@@ -120,7 +120,7 @@ export default function Contact() {
 
       <section className="bg-gradient-to-b from-gray-100 to-white pt-20 pb-0 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-gray-900">
+          <h1 className="text-4xl sm:text-6xl font-bold mb-6 text-gray-900">
             お問い合わせ
           </h1>
           <p className="text-xl text-gray-600">
@@ -146,22 +146,22 @@ export default function Contact() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <button
-              onClick={() => setContactMethod('line')}
+              onClick={() => setContactMethod("line")}
               className={`w-full sm:w-1/3 py-4 rounded-lg font-bold text-white transition duration-200 ${
-                contactMethod === 'line'
-                  ? 'bg-green-600'
-                  : 'bg-green-500 hover:bg-green-600'
+                contactMethod === "line"
+                  ? "bg-green-600"
+                  : "bg-green-500 hover:bg-green-600"
               }`}
             >
               💬 LINEで相談
             </button>
 
             <button
-              onClick={() => setContactMethod('form')}
+              onClick={() => setContactMethod("form")}
               className={`w-full sm:w-1/3 py-4 rounded-lg font-bold text-white transition duration-200 ${
-                contactMethod === 'form'
-                  ? 'bg-red-700'
-                  : 'bg-red-600 hover:bg-red-700'
+                contactMethod === "form"
+                  ? "bg-red-700"
+                  : "bg-red-600 hover:bg-red-700"
               }`}
             >
               ✉ メール・電話で相談
@@ -172,13 +172,13 @@ export default function Contact() {
 
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          {contactMethod === 'none' && (
+          {contactMethod === "none" && (
             <p className="text-center text-gray-600">
               上記のいずれかの方法を選択してください。
             </p>
           )}
 
-          {contactMethod === 'line' && (
+          {contactMethod === "line" && (
             <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 text-center">
               <h2 className="text-2xl font-bold mb-6 text-gray-900">
                 💬 LINEでお問い合わせ
@@ -200,7 +200,7 @@ export default function Contact() {
             </div>
           )}
 
-          {contactMethod === 'form' && (
+          {contactMethod === "form" && (
             <div className="bg-gray-50 p-8 rounded-lg border border-gray-200">
               <h2 className="text-2xl font-bold mb-6 text-gray-900">
                 ✉ メール・電話でお問い合わせ
@@ -432,7 +432,7 @@ export default function Contact() {
                       <option value="メール">メール</option>
                     </select>
                   </div>
-                  {formData.contactMethodDetail === 'LINE' && (
+                  {formData.contactMethodDetail === "LINE" && (
                     <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 text-center">
                       <h2 className="text-xl font-bold mb-6 text-gray-900">
                         LINEでお問い合わせ

@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
-import React from 'react';
-import NavHeader from '../components/NavHeader';
-import Footer from '../components/Footer';
+import React from "react";
+import NavHeader from "../components/NavHeader";
+import Footer from "../components/Footer";
+import Link from "next/link";
 
 export default function Plan() {
   return (
@@ -12,11 +13,11 @@ export default function Plan() {
         className="bg-no-repeat bg-center bg-cover flex items-center justify-center"
         style={{
           backgroundImage: "url('/planBackground.svg')",
-          height: '100vh',
+          height: "100vh",
         }}
       >
         <div className="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center h-full">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-white">
+          <h1 className="text-4xl sm:text-6xl font-bold mb-6 text-white">
             料金プラン
           </h1>
           <p className="text-xl text-white">
@@ -29,7 +30,7 @@ export default function Plan() {
 
       <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-200">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-8 text-gray-900">
+          <h2 className="text-2xl font-bold text-center mb-8 text-gray-900">
             料金プラン
           </h2>
           <p className="text-lg text-gray-900 mb-10 drop-shadow-sm text-center mb-15">
@@ -76,9 +77,9 @@ export default function Plan() {
           <div className="grid gap-6 mb-10 sm:grid-cols-1 md:grid-cols-3">
             {[
               {
-                title: 'パック料金',
-                badge: '5時間',
-                price: '10万円〜',
+                title: "パック料金",
+                badge: "5時間",
+                price: "10万円〜",
                 description: (
                   <>
                     調査員2名の車両込みの時間契約プラン。
@@ -89,18 +90,113 @@ export default function Plan() {
                   </>
                 ),
                 levels: [
-                  { icon: ['man', 'man', 'car'], price: '' },
-                  { icon: [], price: '5時間　10万円〜延長3.0万円/h稼働数1' },
-                  { icon: [], price: '10時間　20万円〜延長3.0万円/h稼働数2' },
-                  { icon: [], price: '15時間　30万円〜延長2.5万円/h稼働数3' },
-                  { icon: [], price: '20時間　40万円〜延長2.5万円/h稼働数4' },
-                  { icon: [], price: '25時間　50万円〜延長2.0万円/h稼働数5' },
+                  { icon: ["man", "man", "car"], price: "" },
+                  {
+                    icon: [],
+                    price: (
+                      <table className="w-full border-collapse border border-gray-300 text-sm sm:text-base">
+                        <thead>
+                          <tr className="bg-gray-100">
+                            <th className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 w-1/4 whitespace-nowrap">
+                              時間
+                            </th>
+                            <th className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 w-1/4 whitespace-nowrap">
+                              料金
+                            </th>
+                            <th className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 w-1/4 whitespace-nowrap">
+                              延長料金/h
+                            </th>
+                            <th className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 w-1/4 whitespace-nowrap">
+                              稼働数
+                            </th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              5時間
+                            </td>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              10万円〜
+                            </td>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              3.0万円
+                            </td>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              1
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              10時間
+                            </td>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              20万円〜
+                            </td>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              3.0万円
+                            </td>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              2
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              15時間
+                            </td>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              30万円〜
+                            </td>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              2.5万円
+                            </td>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              3
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              20時間
+                            </td>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              40万円〜
+                            </td>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              2.5万円
+                            </td>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              4
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              25時間
+                            </td>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              50万円〜
+                            </td>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              2.0万円
+                            </td>
+                            <td className="border border-gray-300 px-2 py-1 sm:px-4 sm:py-2 whitespace-nowrap">
+                              5
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    ),
+                  },
                 ],
               },
               {
-                title: '簡易調査',
-                badge: '1週間',
-                price: '1万円〜',
+                title: "簡易調査",
+                badge: "1週間",
+                price: "1万円〜",
                 description: (
                   <>
                     配偶者が浮気をしているかどうかを確認したい人に最適なプラン！
@@ -110,9 +206,9 @@ export default function Plan() {
                 ),
               },
               {
-                title: '通常調査',
-                badge: '60分',
-                price: '1万円〜',
+                title: "通常調査",
+                badge: "60分",
+                price: "1万円〜",
                 description: (
                   <>
                     調査員の人数と車両の有無を選んで頂き、
@@ -123,9 +219,9 @@ export default function Plan() {
                   </>
                 ),
                 levels: [
-                  { icon: ['man', ''], price: '1万円/h' },
-                  { icon: ['man', 'man'], price: '2万円/h' },
-                  { icon: ['man', 'man', 'car'], price: '3万円/h' },
+                  { icon: ["man"], price: "1万円/h" },
+                  { icon: ["man", "man"], price: "2万円/h" },
+                  { icon: ["man", "man", "car"], price: "3万円/h" },
                 ],
               },
             ].map((plan, i) => (
@@ -134,14 +230,15 @@ export default function Plan() {
                 className="p-6 rounded-xl border border-gray-300 bg-white shadow-sm"
               >
                 {/* タイトル行 */}
-                <div className="flex justify-between items-center">
+                <div className="flex items-center mb-2">
                   <h3 className="text-xl font-bold text-gray-900">
                     {plan.title}
                   </h3>
+                  <div className="flex-1"></div>
                   <span className="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-full font-semibold">
                     {plan.badge}
                   </span>
-                  <span className="text-xl font-bold text-gray-900">
+                  <span className="text-xl font-bold text-gray-900 ml-2">
                     {plan.price}
                   </span>
                 </div>
@@ -170,7 +267,11 @@ export default function Plan() {
                             src={`/${iconName}.svg`}
                             alt={iconName}
                             className={`w-10 h-10 ${
-                              iconName === 'man' ? 'mr-[-20px]' : 'ml-[10px]'
+                              i === 0
+                                ? "ml-[0px]"
+                                : iconName === "man" && i > 0
+                                ? "ml-[-25px]"
+                                : "ml-[-10px]"
                             }`}
                           />
                         ))}
@@ -192,10 +293,10 @@ export default function Plan() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                '調査員の人件費',
-                '*車両・機材費',
-                '交通費',
-                '報告書作成費',
+                "調査員の人件費",
+                "*車両・機材費",
+                "交通費",
+                "報告書作成費",
               ].map((item, index) => (
                 <div key={index} className="flex items-center">
                   <span className="text-red-600 font-bold mr-3 text-xl">✓</span>
@@ -226,23 +327,12 @@ export default function Plan() {
           </div>
 
           <div className="text-center">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900">
-              ご不明な点がございましたら
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:08039815260"
-                className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transition duration-200"
-              >
-                電話で相談する
-              </a>
-              <a
-                href="mailto:lupin08130@gmail.com"
-                className="inline-block bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-lg transition duration-200"
-              >
-                メールで相談する
-              </a>
-            </div>
+            <Link
+              href="/contact"
+              className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-lg transition duration-200 text-lg"
+            >
+              無料相談をする
+            </Link>
           </div>
         </div>
       </section>

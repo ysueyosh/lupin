@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import NavHeader from '../components/NavHeader';
-import Footer from '../components/Footer';
+import React from "react";
+import Link from "next/link";
+import NavHeader from "../components/NavHeader";
+import Footer from "../components/Footer";
 
 export default function RecommendedFor() {
   return (
@@ -13,7 +13,7 @@ export default function RecommendedFor() {
         className="bg-no-repeat bg-center bg-cover flex items-center justify-center"
         style={{
           backgroundImage: "url('/recomendBackground.svg')",
-          height: '100vh',
+          height: "100vh",
         }}
       >
         <div className="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center h-full">
@@ -80,7 +80,7 @@ export default function RecommendedFor() {
             <br />
             一方で「できるなら関係を修復したい」 という方もいらっしゃいます。
             <br />
-            浮気調査は、別れのためだけでなく、{' '}
+            浮気調査は、別れのためだけでなく、{" "}
             <strong>『やり直す勇気を持つため』</strong>
             <br className="block sm:hidden" />
             の調査でもあるのです。
@@ -88,21 +88,21 @@ export default function RecommendedFor() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: '事実を知って気持ちを整理したい',
+                title: "事実を知って気持ちを整理したい",
                 items: [
-                  'まず「浮気しているのかどうか」を確かめ心を落ち着かせたい方。',
+                  "まず「浮気しているのかどうか」を確かめ心を落ち着かせたい方。",
                 ],
               },
               {
-                title: '離婚や慰謝料に備え証拠が欲しい',
+                title: "離婚や慰謝料に備え証拠が欲しい",
                 items: [
-                  '裁判や協議の場で有利に進めるために確かな証拠を取得したい方。',
+                  "裁判や協議の場で有利に進めるために確かな証拠を取得したい方。",
                 ],
               },
               {
-                title: 'もう一度やり直したい',
+                title: "もう一度やり直したい",
                 items: [
-                  '相手を信じるために今の現実をきちんと確かめたい方や浮気の再発を防ぎたい方。',
+                  "相手を信じるために今の現実をきちんと確かめたい方や浮気の再発を防ぎたい方。",
                 ],
               },
             ].map((group, i) => (
@@ -140,7 +140,7 @@ export default function RecommendedFor() {
 
           <div className="mt-12 text-center">
             <Link
-              href="/#contact"
+              href="/contact"
               className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-lg transition duration-200 text-lg"
             >
               無料相談をする

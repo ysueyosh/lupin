@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import NavHeader from "../components/NavHeader";
-import Footer from "../components/Footer";
+import React from 'react';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import NavHeader from '../components/NavHeader';
+import Footer from '../components/Footer';
 
 // アニメーション variants
 const sectionVariant = {
@@ -17,7 +17,7 @@ const itemVariant = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" as const },
+    transition: { duration: 0.6, ease: 'easeOut' as const },
   },
 };
 
@@ -29,7 +29,7 @@ export default function Flow() {
         className="bg-no-repeat bg-center bg-cover flex items-center justify-center"
         style={{
           backgroundImage: "url('/flowBackground.svg')",
-          height: "100vh",
+          height: '100vh',
         }}
       >
         <div className="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center h-full">
@@ -37,7 +37,9 @@ export default function Flow() {
             調査の流れ
           </h1>
           <p className="text-xl text-white">
-            ご相談から報告書納品まで、5つのステップ
+            ご相談から報告書納品まで
+            <br className="block sm:hidden" />
+            5つのステップ
           </p>
         </div>
       </section>
@@ -88,33 +90,33 @@ export default function Flow() {
           {[
             {
               step: 1,
-              title: "無料相談",
+              title: '無料相談',
               description:
-                "電話、メール、LINEなど、お客様の話しやすい方法でお問い合わせください。お客様に寄り添って丁寧にご対応させて頂きます。",
+                '電話、メール、LINEなど、お客様の話しやすい方法でお問い合わせください。お客様に寄り添って丁寧にご対応させて頂きます。',
             },
             {
               step: 2,
-              title: "面談",
+              title: '面談',
               description:
-                "詳しく状況等を把握するため、面談を行います。相談員は、調査を進行していく上での重要なパートナーとなります。お客様自身で相談員や探偵事務所が合っているのかをご判断して頂きます。気になる所や分からない所は遠慮なくお聞き下さい。",
+                '詳しく状況等を把握するため、面談を行います。相談員は、調査を進行していく上での重要なパートナーとなります。お客様自身で相談員や探偵事務所が合っているのかをご判断して頂きます。気になる所や分からない所は遠慮なくお聞き下さい。',
             },
             {
               step: 3,
-              title: "契約",
+              title: '契約',
               description:
-                "お客様の状況に合った調査方法をご提案後、お見積りをさせて頂きます。ご納得頂けましたら契約書を交わす運びとなります。",
+                'お客様の状況に合った調査方法をご提案後、お見積りをさせて頂きます。ご納得頂けましたら契約書を交わす運びとなります。',
             },
             {
               step: 4,
-              title: "調査",
+              title: '調査',
               description:
-                "お客様と協議した日程にて調査を行います。調査中の進展状況はお客様へご報告致します。その後、お客様との打ち合わせと調査を繰り返し、調査のプロが調査の成功を目指します。",
+                'お客様と協議した日程にて調査を行います。調査中の進展状況はお客様へご報告致します。その後、お客様との打ち合わせと調査を繰り返し、調査のプロが調査の成功を目指します。',
             },
             {
               step: 5,
-              title: "報告",
+              title: '報告',
               description:
-                "調査結果を当日中もしくは翌日までにご報告。その後、報告書を作成しお客様へ提出します。",
+                '調査結果を当日中もしくは翌日までにご報告。その後、報告書を作成しお客様へ提出します。',
             },
           ].map((item) => (
             <motion.div

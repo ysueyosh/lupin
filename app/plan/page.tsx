@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
-import NavHeader from "../components/NavHeader";
-import Footer from "../components/Footer";
-import Link from "next/link";
+import React from 'react';
+import NavHeader from '../components/NavHeader';
+import Footer from '../components/Footer';
+import Link from 'next/link';
 
 export default function Plan() {
   return (
@@ -13,7 +13,7 @@ export default function Plan() {
         className="bg-no-repeat bg-center bg-cover flex items-center justify-center"
         style={{
           backgroundImage: "url('/planBackground.svg')",
-          height: "100vh",
+          height: '100vh',
         }}
       >
         <div className="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center h-full">
@@ -21,8 +21,8 @@ export default function Plan() {
             料金プラン
           </h1>
           <p className="text-xl text-white">
-            明確な料金設定。
-            <br className="block sm:hidden" />
+            明確な料金設定
+            <br />
             追加料金は一切いただきません
           </p>
         </div>
@@ -77,9 +77,9 @@ export default function Plan() {
           <div className="grid gap-6 mb-10 sm:grid-cols-1 md:grid-cols-3">
             {[
               {
-                title: "パック料金",
-                badge: "5時間",
-                price: "10万円〜",
+                title: 'パック料金',
+                badge: '5時間',
+                price: '10万円〜',
                 description: (
                   <>
                     調査員2名の車両込みの時間契約プラン。
@@ -90,7 +90,7 @@ export default function Plan() {
                   </>
                 ),
                 levels: [
-                  { icon: ["man", "man", "car"], price: "" },
+                  { icon: ['man', 'man', 'car'], price: '' },
                   {
                     icon: [],
                     price: (
@@ -194,9 +194,9 @@ export default function Plan() {
                 ],
               },
               {
-                title: "簡易調査",
-                badge: "1週間",
-                price: "1万円〜",
+                title: '簡易調査',
+                badge: '1週間',
+                price: '1万円〜',
                 description: (
                   <>
                     配偶者が浮気をしているかどうかを確認したい人に最適なプラン！
@@ -206,9 +206,9 @@ export default function Plan() {
                 ),
               },
               {
-                title: "通常調査",
-                badge: "60分",
-                price: "1万円〜",
+                title: '通常調査',
+                badge: '60分',
+                price: '1万円〜',
                 description: (
                   <>
                     調査員の人数と車両の有無を選んで頂き、
@@ -219,9 +219,12 @@ export default function Plan() {
                   </>
                 ),
                 levels: [
-                  { icon: ["man"], price: "1万円/h" },
-                  { icon: ["man", "man"], price: "2万円/h" },
-                  { icon: ["man", "man", "car"], price: "3万円/h" },
+                  { icon: ['man'], price: '1万円/h' },
+                  {
+                    icon: ['man', 'man', 'or', 'man', 'car'],
+                    price: '2万円/h',
+                  },
+                  { icon: ['man', 'man', 'car'], price: '3万円/h' },
                 ],
               },
             ].map((plan, i) => (
@@ -260,23 +263,51 @@ export default function Plan() {
                       key={idx}
                       className="flex justify-between items-center"
                     >
-                      <div className="flex gap-1">
-                        {row.icon.map((iconName, i) => (
-                          <img
-                            key={i}
-                            src={`/${iconName}.svg`}
-                            alt={iconName}
-                            className={`w-10 h-10 ${
-                              i === 0
-                                ? "ml-[0px]"
-                                : iconName === "man" && i > 0
-                                ? "ml-[-25px]"
-                                : "ml-[-10px]"
-                            }`}
-                          />
-                        ))}
+                      <div className="flex gap-1 items-center">
+                        {row.icon.map((iconName, i) => {
+                          if (iconName === 'or') {
+                            return (
+                              <div
+                                key={i}
+                                style={{
+                                  marginRight: 20,
+                                  color: 'black',
+                                  fontWeight: 'bold',
+                                }}
+                              >
+                                or
+                              </div>
+                            );
+                          }
+                          return (
+                            <img
+                              key={i}
+                              src={`/${iconName}.svg`}
+                              alt={iconName}
+                              className={`w-10 h-10 ${
+                                i === 0
+                                  ? 'ml-[0px]'
+                                  : iconName === 'man' && i > 0
+                                  ? 'ml-[-25px]'
+                                  : 'ml-[-10px]'
+                              }`}
+                            />
+                          );
+                        })}
                       </div>
-
+                      {i === 2 && (
+                        <div
+                          className="
+                          flex-1 h-5 mx-3
+                          bg-[url('/arrow.svg')]
+                          bg-repeat-x
+                          bg-right
+                          bg-center
+                          bg-[length:20px_20px]   /* ← 矢印の大きさを固定 */
+                          opacity-40
+                        "
+                        ></div>
+                      )}
                       <div className="text-l font-semibold text-gray-900">
                         {row.price}
                       </div>
@@ -293,10 +324,10 @@ export default function Plan() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                "調査員の人件費",
-                "*車両・機材費",
-                "交通費",
-                "報告書作成費",
+                '調査員の人件費',
+                '*車両・機材費',
+                '交通費',
+                '報告書作成費',
               ].map((item, index) => (
                 <div key={index} className="flex items-center">
                   <span className="text-red-600 font-bold mr-3 text-xl">✓</span>

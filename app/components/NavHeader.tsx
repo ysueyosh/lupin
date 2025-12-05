@@ -27,6 +27,10 @@ export default function NavHeader({ currentPage }: NavHeaderProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const forceColoredPages = ['/privacy-policy', '/commercial-law', '/contact']; // ←追加
+
+  const isForcedColor = forceColoredPages.includes(currentPage ?? '');
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -45,9 +49,9 @@ export default function NavHeader({ currentPage }: NavHeaderProps) {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        isTop
-          ? 'bg-transparent backdrop-blur-0 border-transparent'
-          : 'bg-[#333333] ackdrop-blur-md shadow-sm'
+        isForcedColor || !isTop
+          ? 'bg-[#333333] backdrop-blur-md shadow-sm'
+          : 'bg-transparent backdrop-blur-0 border-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

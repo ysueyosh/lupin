@@ -36,7 +36,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[url('/siteBackground.svg')] bg-cover bg-fixed bg-center">
+    <div className="relative min-h-screen overflow-hidden">
       <NavHeader />
 
       {/* Hero */}
@@ -228,6 +228,18 @@ export default function Home() {
           </motion.div>
         </div>
       </motion.section>
+
+      <img
+        src="/siteBackground.svg"
+        className="
+      fixed inset-0
+      w-full h-full
+      object-cover
+      -z-10
+      pointer-events-none
+    "
+        alt=""
+      />
 
       <div className="h-[200px] bg-transparent" />
 
